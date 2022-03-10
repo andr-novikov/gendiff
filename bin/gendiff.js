@@ -1,5 +1,5 @@
 #!/usr/bin/env node
 
-import startGenDiff from '../src/index.js';
+import generateDiff from '../src/index.js';
 
-startGenDiff();
+generateDiff();
