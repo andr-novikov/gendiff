@@ -16,10 +16,10 @@ const str = `{
   + verbose: true
 }`;
 
-test('getDifferenceRelativePath', () => {
+test('getDifferencePLainJSON', () => {
   expect(generateDiff('./__fixtures__/file1.json', './__fixtures__/file2.json')).toEqual(str);
 });
 
-test('getDifferenceAbsolutePath', () => {
-  expect(generateDiff(getFixturePath('file1.json'), getFixturePath('file2.json'))).toEqual(str);
+test('getDifferencePlaintYML', () => {
+  expect(generateDiff(getFixturePath('file1.yml'), getFixturePath('file2.yaml'))).toEqual(str);
 });
