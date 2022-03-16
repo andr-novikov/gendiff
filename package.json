@@ -7,6 +7,9 @@
   "bin": {
     "gendiff": "bin/gendiff.js"
   },
+  "simple-git-hooks": {
+    "pre-push": "make lint"
+  },
   "scripts": {
     "test": "npx jest --bail"
   },
@@ -30,6 +33,7 @@
     "eslint-config-airbnb-base": "^15.0.0",
     "eslint-plugin-import": "^2.25.4",
     "eslint-plugin-jest": "^26.1.1",
-    "jest": "^27.5.1"
+    "jest": "^27.5.1",
+    "simple-git-hooks": "^2.7.0"
   }
 }
