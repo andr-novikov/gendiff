@@ -1,7 +1,7 @@
 import _ from 'lodash';
 
 const format = (value) => {
-  if (value === null || _.isBoolean(value)) {
+  if (value === null || _.isBoolean(value) || _.isNumber(value)) {
     return value;
   } if (_.isObject(value)) {
     return '[complex value]';
