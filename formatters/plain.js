@@ -24,7 +24,7 @@ const plain = (value) => {
       }
       return '';
     });
-    return _.compact(lines).join('\n' );
+    return _.compact(lines).join('\n');
   };
 
   return iter(value);
