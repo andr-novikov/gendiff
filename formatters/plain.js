@@ -13,16 +13,18 @@ const plain = (value) => {
   const iter = (currentValue, key) => {
     const currentKey = key ? `${key}.` : '';
     const lines = currentValue.map((obj) => {
-      if (obj.children) {
-        return iter(obj.children, `${currentKey}${obj.key}`);
-      } if (obj.status === 'remove') {
-        return `Property '${currentKey}${obj.key}' was removed`;
-      } if (obj.status === 'add') {
-        return `Property '${currentKey}${obj.key}' was added with value: ${format(obj.value)}`;
-      } if (obj.status === 'update') {
-        return `Property '${currentKey}${obj.key}' was updated. From ${format(obj.oldValue)} to ${format(obj.newValue)}`;
+      switch (obj.status) {
+        case 'default':
+          return obj.children ? iter(obj.children, `${currentKey}${obj.key}`) : '';
+        case 'remove':
+          return `Property '${currentKey}${obj.key}' was removed`;
+        case 'add':
+          return `Property '${currentKey}${obj.key}' was added with value: ${format(obj.value)}`;
+        case 'update':
+          return `Property '${currentKey}${obj.key}' was updated. From ${format(obj.oldValue)} to ${format(obj.newValue)}`;
+        default:
+          return '';
       }
-      return '';
     });
     return _.compact(lines).join('\n');
   };
