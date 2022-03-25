@@ -26,8 +26,8 @@ test('getDifferencePlain', () => {
   expect(diff).toEqual(expectDiff);
 });
 
-test('getDifferencePlainYML', () => {
-  const diff = genDiff(getFixturePath('file1.yml'), getFixturePath('file2.yaml'), 'plain');
-  const expectDiff = fs.readFileSync(getFixturePath('expect-plain.txt'), 'utf8');
+test('getDifferenceJSON', () => {
+  const diff = genDiff(getFixturePath('file1.yml'), getFixturePath('file2.yaml'), 'json');
+  const expectDiff = fs.readFileSync(getFixturePath('expect-json.txt'), 'utf8');
   expect(diff).toEqual(expectDiff);
 });
