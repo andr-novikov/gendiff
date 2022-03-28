@@ -14,13 +14,13 @@ const plain = (value) => {
     const currentKey = key ? `${key}.` : '';
     const lines = currentValue.map((obj) => {
       switch (obj.status) {
-        case 'default':
+        case 'unchanged':
           return obj.children ? iter(obj.children, `${currentKey}${obj.key}`) : '';
-        case 'remove':
+        case 'removed':
           return `Property '${currentKey}${obj.key}' was removed`;
-        case 'add':
+        case 'added':
           return `Property '${currentKey}${obj.key}' was added with value: ${format(obj.value)}`;
-        case 'update':
+        case 'updated':
           return `Property '${currentKey}${obj.key}' was updated. From ${format(obj.oldValue)} to ${format(obj.newValue)}`;
         default:
           return '';

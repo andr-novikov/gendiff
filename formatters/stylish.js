@@ -9,14 +9,14 @@ const stringify = (value, replacer = ' ', spacesCount = 4) => {
     const indentSize = depth * spacesCount;
     const currentIndent = replacer.repeat(indentSize - 2);
     const bracketIndent = replacer.repeat(indentSize - spacesCount);
-    const map = { add: '+ ', remove: '- ', default: '  ' };
+    const map = { added: '+ ', removed: '- ', unchanged: '  ' };
 
     const linesObj = (!_.isPlainObject(currentValue)) ? '' : Object
       .entries(currentValue)
       .map(([key, val]) => `${currentIndent}  ${key}: ${iter(val, depth + 1)}`);
 
     const linesChild = (_.isPlainObject(currentValue)) ? '' : currentValue.map((obj) => {
-      if (obj.status === 'update') {
+      if (obj.status === 'updated') {
         const str1 = `${currentIndent}- ${obj.key}: ${iter(obj.oldValue, depth + 1)}`;
         const str2 = `${currentIndent}+ ${obj.key}: ${iter(obj.newValue, depth + 1)}`;
         return [str1, str2].join('\n');
