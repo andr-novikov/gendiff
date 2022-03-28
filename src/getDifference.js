@@ -15,7 +15,7 @@ const getDifference = (data1, data2) => {
     } if (!_.has(data2, key)) {
       const value = data1[key];
       return { key, status: 'removed', value };
-    } if (data1[key] !== data2[key]) {
+    } if (!_.isEqual(data1[key], data2[key])) {
       const oldValue = data1[key];
       const newValue = data2[key];
       return {
