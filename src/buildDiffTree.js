@@ -10,11 +10,9 @@ const buildDiffTree = (data1, data2) => {
       const children = buildDiffTree(data1[key], data2[key]);
       return { key, status: 'nested', children };
     } if (!_.has(data1, key)) {
-      const value = data2[key];
-      return { key, status: 'added', value };
+      return { key, status: 'added', value: data2[key] };
     } if (!_.has(data2, key)) {
-      const value = data1[key];
-      return { key, status: 'removed', value };
+      return { key, status: 'removed', value: data1[key] };
     } if (!_.isEqual(data1[key], data2[key])) {
       const oldValue = data1[key];
       const newValue = data2[key];
@@ -22,8 +20,7 @@ const buildDiffTree = (data1, data2) => {
         key, status: 'updated', oldValue, newValue,
       };
     }
-    const value = data1[key];
-    return { key, status: 'unchanged', value };
+    return { key, status: 'unchanged', value: data1[key] };
   });
   return result;
 };
