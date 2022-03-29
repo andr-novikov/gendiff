@@ -8,7 +8,7 @@ const getDifference = (data1, data2) => {
   const result = keys.map((key) => {
     if (_.isPlainObject(data1[key]) && _.isPlainObject(data2[key])) {
       const children = getDifference(data1[key], data2[key]);
-      return { key, status: 'unchanged', children };
+      return { key, status: 'nested', children };
     } if (!_.has(data1, key)) {
       const value = data2[key];
       return { key, status: 'added', value };

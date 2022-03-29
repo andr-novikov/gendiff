@@ -14,8 +14,8 @@ const plain = (value) => {
     const currentKey = key ? `${key}.` : '';
     const lines = currentValue.map((obj) => {
       switch (obj.status) {
-        case 'unchanged':
-          return obj.children ? iter(obj.children, `${currentKey}${obj.key}`) : '';
+        case 'nested':
+          return iter(obj.children, `${currentKey}${obj.key}`);
         case 'removed':
           return `Property '${currentKey}${obj.key}' was removed`;
         case 'added':
