@@ -17,15 +17,26 @@
 ```
 $ git clone git@github.com:andr-novikov/frontend-project-lvl2.git
 $ make install
+$ npm link
 ```
 
 ## Help for the utility:
 ```
-$ gendiff -h
+Usage: gendiff [options] <filepath1> <filepath2>
+
+Compares two configuration files and shows a difference.
+
+Options:
+  -V, --version        output the version number
+  -f, --format [type]  output format (default: "stylish")
+  -h, --help           display help for command
 ```
 ## Demonstration
 ### Comparing files in stylish format
+[![asciicast](https://asciinema.org/a/oF3TkF3VlpiTMPf9nwb5TwV34.svg)](https://asciinema.org/a/oF3TkF3VlpiTMPf9nwb5TwV34)
 
 ### Comparing files in plain format
+[![asciicast](https://asciinema.org/a/YOKz2HSHEB9tLF4yRLwlruR5C.svg)](https://asciinema.org/a/YOKz2HSHEB9tLF4yRLwlruR5C)
 
 ### Comparing files in json format
+[![asciicast](https://asciinema.org/a/wfZTwR3Qhjj86Gog6t8MayZxV.svg)](https://asciinema.org/a/wfZTwR3Qhjj86Gog6t8MayZxV)
