@@ -1,6 +1,6 @@
 import buildDiffTree from './buildDiffTree.js';
 import getFileContent from './getFileContent.js';
-import formatter from '../formatters/index.js';
+import formatter from './formatters/index.js';
 
 const genDiff = (filepath1, filepath2, formatName = 'stylish') => {
   const data1 = getFileContent(filepath1);
