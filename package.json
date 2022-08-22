@@ -1,7 +1,7 @@
 {
   "name": "@hexlet/code",
   "version": "1.0.0",
-  "description": "[![Actions Status](https://github.com/andr-novikov/frontend-project-lvl2/workflows/hexlet-check/badge.svg)](https://github.com/andr-novikov/frontend-project-lvl2/actions)",
+  "description": "Diff generator",
   "type": "module",
   "main": "src/genDiff.js",
   "bin": {
@@ -15,14 +15,14 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/andr-novikov/frontend-project-lvl2.git"
+    "url": "git+https://github.com/andr-novikov/gendiff.git"
   },
   "author": "Andrey Novikov",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/andr-novikov/frontend-project-lvl2/issues"
+    "url": "https://github.com/andr-novikov/gendiff/issues"
   },
-  "homepage": "https://github.com/andr-novikov/frontend-project-lvl2#readme",
+  "homepage": "https://github.com/andr-novikov/gendiff#readme",
   "dependencies": {
     "commander": "^9.0.0",
     "js-yaml": "^4.1.0",
